@@ -17,7 +17,7 @@ export default function App() {
           loop 
           muted 
           playsInline
-          className="w-full h-full object-cover object-center opacity-40 md:opacity-60"
+          className="w-full h-full object-cover object-right md:object-center opacity-40 md:opacity-60"
           src="/background.mp4" 
         />
         {/* Smooth gradient at the bottom */}
