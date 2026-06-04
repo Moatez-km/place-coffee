@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Dancing Script", cursive;
+  
+  --color-coffee-bg: #0d0603;
+  --color-coffee-brand: #d17c46;
+  --color-coffee-brand-dark: #b36230;
+  --color-coffee-card: #26160c;
+  --color-coffee-line: #3d2414;
+}
+
+body {
+  background-color: var(--color-coffee-bg);
+  color: white;
+  margin: 0;
+  overflow-x: hidden;
+}

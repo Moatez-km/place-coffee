@@ -1,0 +1,154 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import { Search, Menu, Twitter, Instagram, Youtube, Coffee, CupSoda } from 'lucide-react';
+import React from 'react';
+
+export default function App() {
+  return (
+    <div className="min-h-screen w-full flex bg-coffee-bg text-white font-sans overflow-hidden relative">
+      
+      {/* Full Page Background Video */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover object-center opacity-40 md:opacity-60"
+          src="/background.mp4" 
+        />
+        {/* Smooth gradient at the bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-coffee-bg via-coffee-bg/80 to-transparent" />
+      </div>
+
+      {/* Left Social Sidebar */}
+      <aside className="w-16 md:w-20 hidden md:flex flex-col items-center justify-center py-10 relative z-20">
+        <div className="w-[1px] bg-white/20 h-16 flex-1 mb-8" />
+        <div className="flex flex-col items-center gap-6">
+          <a href="#" className="text-white/60 hover:text-white transition-colors">
+            <Twitter size={20} />
+          </a>
+          <a href="#" className="text-white/60 hover:text-white transition-colors">
+            <Instagram size={20} />
+          </a>
+          <a href="#" className="text-white/60 hover:text-white transition-colors">
+            <Youtube size={20} />
+          </a>
+        </div>
+        <div className="w-[1px] bg-white/20 h-16 flex-1 mt-8" />
+      </aside>
+
+      {/* Main Content Area */}
+      <main className="flex-1 flex flex-col relative mr-4 md:mr-10">
+        
+        {/* Navigation */}
+        <header className="flex items-center justify-between py-6 w-full relative z-20 px-4 md:px-0">
+          
+          {/* Mock Logo */}
+          <div className="flex flex-col items-center justify-center w-14 h-14 rounded-full border border-[#8C7C73]/40 text-[#d17c46] cursor-pointer">
+            <Coffee size={18} className="mb-0.5" />
+            <span className="text-[6px] uppercase tracking-wider text-[#8C7C73]">Your Logo Here</span>
+          </div>
+          
+          {/* Nav Links */}
+          <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-white/90">
+            <a href="#" className="hover:text-[#d17c46] transition-colors">Home</a>
+            <a href="#" className="hover:text-[#d17c46] transition-colors">Menu</a>
+            <a href="#" className="hover:text-[#d17c46] transition-colors">About</a>
+            <a href="#" className="hover:text-[#d17c46] transition-colors">Contact</a>
+          </nav>
+          
+          {/* Action Icons */}
+          <div className="flex items-center gap-6">
+            <button className="text-white/90 hover:text-white transition-transform hover:scale-110">
+              <Search size={22} />
+            </button>
+            <button className="text-white bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+              <Menu size={22} />
+            </button>
+          </div>
+        </header>
+
+        {/* Hero Section */}
+        <section className="flex-1 flex flex-col md:flex-row items-center justify-between pb-10 relative z-10 px-4 md:px-0">
+          
+          {/* Left Column - Text Details */}
+          <div className="w-full md:w-3/5 flex flex-col mt-10 md:mt-0 relative z-20">
+            
+            {/* Titles */}
+            <div className="relative mb-6 leading-none">
+              <h2 className="font-script text-[#d17c46] text-6xl md:text-8xl absolute -top-8 md:-top-16 left-6 md:left-12 -rotate-2 z-10 drop-shadow-lg">
+                Place
+              </h2>
+              <h1 className="font-sans font-black text-8xl md:text-[160px] tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-gray-500 uppercase leading-[0.85]">
+                Coffee
+              </h1>
+            </div>
+
+            {/* Subtitle / Paragraph */}
+            <p className="text-white/70 max-w-sm mt-4 md:mt-2 text-sm md:text-base leading-relaxed pl-2 font-medium">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+            </p>
+
+            {/* Coffee Type Cards */}
+            <div className="grid grid-cols-4 gap-2 md:gap-4 mt-8 md:mt-12 max-w-2xl pl-2">
+              <CoffeeTypeCard title="Espresso" desc="Lorem ipsum amet consectetur." />
+              <CoffeeTypeCard title="Latte" desc="Lorem ipsum amet consectetur." />
+              <CoffeeTypeCard title="Coffee" desc="Lorem ipsum amet consectetur." />
+              <CoffeeTypeCard title="Cappuccino" desc="Lorem ipsum amet consectetur." />
+            </div>
+
+            {/* Actions / Buttons */}
+            <div className="flex items-center gap-6 mt-10 md:mt-12 pl-2">
+              <button className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#b35e2b]/20">
+                Order Now
+              </button>
+              <button className="text-white/80 hover:text-white font-semibold text-sm transition-colors bg-transparent border border-white/20 px-8 py-3 rounded-full flex items-center gap-2 hover:bg-white/10">
+                View More <span className="text-lg leading-none">&rarr;</span>
+              </button>
+            </div>
+
+            {/* Website Link */}
+            <div className="mt-8 md:mt-16 pl-2">
+              <a href="#" className="text-[#d17c46] hover:text-[#de884b] transition-colors font-medium text-sm tracking-widest">
+                www.website.com
+              </a>
+            </div>
+
+          </div>
+
+          {/* Right Column - Big Image */}
+          <div className="w-full md:w-2/5 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 flex items-center justify-center mt-12 md:mt-0 z-0 h-[400px] md:h-[600px] select-none pointer-events-none">
+            <img 
+              src="https://images.unsplash.com/photo-1550478144-884812ae93be?w=1000&auto=format&fit=crop&q=80" 
+              alt="Steaming Cup of Coffee"
+              className="w-full h-full object-cover object-center opacity-90 rounded-full md:rounded-none drop-shadow-2xl mix-blend-lighten"
+              style={{
+                maskImage: 'radial-gradient(circle, black 35%, transparent 70%)',
+                WebkitMaskImage: 'radial-gradient(circle, black 35%, transparent 70%)'
+              }}
+            />
+          </div>
+          
+        </section>
+      </main>
+
+    </div>
+  );
+}
+
+// Components
+function CoffeeTypeCard({ title, desc }: { title: string, desc: string }) {
+  return (
+    <div className="bg-coffee-card/80 border border-coffee-line rounded-lg p-2 md:p-4 flex flex-col items-center justify-start text-center hover:bg-coffee-card transition-colors cursor-pointer group">
+      <div className="text-[#d17c46] mb-2 group-hover:scale-110 transition-transform">
+        <CupSoda size={18} strokeWidth={1.5} />
+      </div>
+      <h3 className="font-bold text-white/90 text-[10px] md:text-sm mb-1">{title}</h3>
+      <p className="text-white/50 text-[8px] md:text-[10px] leading-tight">{desc}</p>
+    </div>
+  );
+}
