@@ -5,13 +5,14 @@
 
 import { Search, Menu, Twitter, Instagram, Youtube, Coffee, CupSoda } from 'lucide-react';
 import React from 'react';
+import { MenuCarousel } from './components/MenuCarousel';
 
 export default function App() {
   return (
-    <div className="min-h-screen w-full flex bg-coffee-bg text-white font-sans overflow-hidden relative">
+    <div className="min-h-screen w-full flex bg-coffee-bg text-white font-sans overflow-x-hidden relative">
       
-      {/* Full Page Background Video */}
-      <div className="absolute inset-0 z-0 select-none pointer-events-none">
+      {/* Home Page Background Video */}
+      <div className="absolute top-0 left-0 w-full h-screen z-0 select-none pointer-events-none">
         <video 
           autoPlay 
           loop 
@@ -133,6 +134,11 @@ export default function App() {
             />
           </div>
           
+        </section>
+
+        {/* Menu Carousel Section */}
+        <section id="menu" className="w-full relative z-10 pb-24 mt-12">
+          <MenuCarousel />
         </section>
       </main>
 
