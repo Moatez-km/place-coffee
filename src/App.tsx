@@ -43,7 +43,7 @@ export default function App() {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col relative mr-4 md:mr-10">
+      <main className="flex-1 flex flex-col relative w-full md:w-auto md:mr-10">
         
         {/* Navigation */}
         <header className="flex items-center justify-between py-6 w-full relative z-20 px-4 md:px-0">
@@ -81,10 +81,10 @@ export default function App() {
             
             {/* Titles */}
             <div className="relative mb-6 leading-none">
-              <h2 className="font-script text-[#d17c46] text-6xl md:text-8xl absolute -top-8 md:-top-16 left-6 md:left-12 -rotate-2 z-10 drop-shadow-lg">
+              <h2 className="font-script text-[#d17c46] text-5xl sm:text-6xl md:text-8xl absolute -top-8 md:-top-16 left-2 sm:left-6 md:left-12 -rotate-2 z-10 drop-shadow-lg">
                 Place
               </h2>
-              <h1 className="font-sans font-black text-8xl md:text-[160px] tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-gray-500 uppercase leading-[0.85]">
+              <h1 className="font-sans font-black text-[80px] sm:text-8xl md:text-[160px] tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-gray-500 uppercase leading-[0.85]">
                 Coffee
               </h1>
             </div>
@@ -95,7 +95,7 @@ export default function App() {
             </p>
 
             {/* Coffee Type Cards */}
-            <div className="grid grid-cols-4 gap-2 md:gap-4 mt-8 md:mt-12 max-w-2xl pl-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8 md:mt-12 max-w-2xl pl-2">
               <CoffeeTypeCard title="Espresso" desc="Lorem ipsum amet consectetur." />
               <CoffeeTypeCard title="Latte" desc="Lorem ipsum amet consectetur." />
               <CoffeeTypeCard title="Coffee" desc="Lorem ipsum amet consectetur." />
@@ -103,11 +103,11 @@ export default function App() {
             </div>
 
             {/* Actions / Buttons */}
-            <div className="flex items-center gap-6 mt-10 md:mt-12 pl-2">
-              <button className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#b35e2b]/20">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mt-10 md:mt-12 pl-2">
+              <button className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-white w-full sm:w-auto px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#b35e2b]/20">
                 Order Now
               </button>
-              <button className="text-white/80 hover:text-white font-semibold text-sm transition-colors bg-transparent border border-white/20 px-8 py-3 rounded-full flex items-center gap-2 hover:bg-white/10">
+              <button className="text-white/80 hover:text-white font-semibold text-sm transition-colors w-full sm:w-auto bg-transparent border border-white/20 px-8 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/10">
                 View More <span className="text-lg leading-none">&rarr;</span>
               </button>
             </div>
@@ -137,7 +137,7 @@ export default function App() {
         </section>
 
         {/* Menu Carousel Section */}
-        <section id="menu" className="w-full relative z-10 pb-24 mt-12">
+        <section id="menu" className="w-full relative z-10 py-12 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3d1e0d] via-[#1a0a04] to-[#0a0402]">
           <MenuCarousel />
         </section>
       </main>
