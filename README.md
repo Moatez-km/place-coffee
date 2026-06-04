@@ -1,20 +1,35 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+  <img width="800" alt="Place Coffee Hero Section" src="./public/screenshot.png" />
+  <br/>
+  <h1>Place Coffee</h1>
+  <p>A premium, modern web experience for a high-end coffee shop.</p>
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## ☕ About The Project
 
-View your app in AI Studio: https://ai.studio/apps/a8d74a3d-c8d3-45d3-9dda-1c2eed7860db
+**Place Coffee** is a beautifully designed, responsive web application that brings the premium coffee shop experience to your screen. 
 
-## Run Locally
+### ✨ Key Features
+- **Immersive Hero Section**: Features a stunning full-screen looping video background that immediately captures attention.
+- **Dynamic Typography**: Custom script fonts and massive, dynamically scaling headers create a bold, modern aesthetic.
+- **Continuous Marquee Menu**: A sleek, auto-scrolling horizontal carousel built with Swiper.js to elegantly display our signature drinks (Cold Brew, Iced Matcha, Lattes, and more).
+- **Fully Responsive Design**: Carefully crafted with Tailwind CSS to look flawless on any device—from large desktop monitors down to the narrowest mobile screens.
 
-**Prerequisites:**  Node.js
+## 🚀 Run Locally
 
+**Prerequisites:** Node.js
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open your browser and visit `http://localhost:3000` to view the app!
+
+## 📸 Adding Your Screenshot
+*Note: To display the screenshot at the top of this README on GitHub, please save your screenshot image as `screenshot.png` inside the `public` folder of this project!*
