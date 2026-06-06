@@ -6,10 +6,12 @@
 import { Search, Menu, Twitter, Instagram, Youtube, Coffee, CupSoda } from 'lucide-react';
 import React from 'react';
 import { MenuCarousel } from './components/MenuCarousel';
+import { AboutSection } from './components/AboutSection';
+import { ContactSection } from './components/ContactSection';
 
 export default function App() {
   return (
-    <div className="min-h-screen w-full flex bg-coffee-bg text-white font-sans overflow-x-hidden relative">
+    <div id="home" className="min-h-screen w-full flex bg-coffee-bg text-white font-sans overflow-x-hidden relative">
       
       {/* Home Page Background Video */}
       <div className="absolute top-0 left-0 w-full h-screen z-0 select-none pointer-events-none">
@@ -56,10 +58,10 @@ export default function App() {
           
           {/* Nav Links */}
           <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-white/90">
-            <a href="#" className="hover:text-[#d17c46] transition-colors">Home</a>
-            <a href="#" className="hover:text-[#d17c46] transition-colors">Menu</a>
-            <a href="#" className="hover:text-[#d17c46] transition-colors">About</a>
-            <a href="#" className="hover:text-[#d17c46] transition-colors">Contact</a>
+            <a href="#home" className="hover:text-[#d17c46] transition-colors">Home</a>
+            <a href="#menu" className="hover:text-[#d17c46] transition-colors">Menu</a>
+            <a href="#about" className="hover:text-[#d17c46] transition-colors">About</a>
+            <a href="#contact" className="hover:text-[#d17c46] transition-colors">Contact</a>
           </nav>
           
           {/* Action Icons */}
@@ -140,6 +142,38 @@ export default function App() {
         <section id="menu" className="w-full relative z-10 py-12 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3d1e0d] via-[#1a0a04] to-[#0a0402]">
           <MenuCarousel />
         </section>
+
+        {/* About Section */}
+        <AboutSection />
+
+        {/* Contact Section */}
+        <ContactSection />
+
+        {/* Professional Footer */}
+        <footer className="w-full py-12 bg-[#050201] border-t border-coffee-line/40 relative z-20 px-4">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center justify-center w-10 h-10 rounded-full border border-[#8C7C73]/40 text-[#d17c46]">
+                <Coffee size={14} className="mb-0.5" />
+              </div>
+              <div>
+                <span className="font-bold text-white text-sm tracking-wider uppercase">Bohnea Café</span>
+                <p className="text-[10px] text-white/40">© 2026. All rights reserved.</p>
+              </div>
+            </div>
+            
+            <div className="flex gap-8 text-xs font-semibold text-white/50">
+              <a href="#home" className="hover:text-[#d17c46] transition-colors">Home</a>
+              <a href="#menu" className="hover:text-[#d17c46] transition-colors">Menu</a>
+              <a href="#about" className="hover:text-[#d17c46] transition-colors">About</a>
+              <a href="#contact" className="hover:text-[#d17c46] transition-colors">Contact</a>
+            </div>
+
+            <div className="text-[10px] text-white/30 text-center md:text-right">
+              Crafted in Erfurt, Germany. Sourced globally.
+            </div>
+          </div>
+        </footer>
       </main>
 
     </div>

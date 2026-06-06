@@ -18,3 +18,14 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+
+/* Custom dark/sepia Google Maps styling to blend with the dark coffee theme */
+.map-dark-blend {
+  filter: grayscale(1) invert(0.9) contrast(0.95) brightness(0.85) sepia(0.35) hue-rotate(330deg);
+  transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.map-dark-blend:hover {
+  filter: grayscale(0) invert(0) contrast(1) brightness(1) sepia(0);
+}
+
