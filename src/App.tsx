@@ -51,10 +51,13 @@ export default function App() {
         {/* Navigation */}
         <header className="flex items-center justify-between py-6 w-full relative z-20 px-4 md:px-0">
           
-          {/* Mock Logo */}
-          <div className="flex flex-col items-center justify-center w-14 h-14 rounded-full border border-[#8C7C73]/40 text-[#d17c46] cursor-pointer">
-            <Coffee size={18} className="mb-0.5" />
-            <span className="text-[6px] uppercase tracking-wider text-[#8C7C73]">Your Logo Here</span>
+          {/* Brand Logo */}
+          <div className="flex flex-col items-center justify-center w-14 h-14 rounded-full border border-[#8C7C73]/40 overflow-hidden cursor-pointer bg-white">
+            <img 
+              src="/logo.png" 
+              alt="Bohnea Café Logo" 
+              className="w-full h-full object-cover"
+            />
           </div>
           
           {/* Nav Links */}
@@ -158,8 +161,12 @@ export default function App() {
         <footer className="w-full py-12 bg-[#050201] border-t border-coffee-line/40 relative z-20 px-4">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <div className="flex flex-col items-center justify-center w-10 h-10 rounded-full border border-[#8C7C73]/40 text-[#d17c46]">
-                <Coffee size={14} className="mb-0.5" />
+              <div className="flex flex-col items-center justify-center w-10 h-10 rounded-full border border-[#8C7C73]/40 overflow-hidden bg-white">
+                <img 
+                  src="/logo.png" 
+                  alt="Bohnea Café Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <span className="font-bold text-white text-sm tracking-wider uppercase">Bohnea Café</span>
