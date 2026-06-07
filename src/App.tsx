@@ -86,10 +86,10 @@ export default function App() {
             {/* Titles */}
             <div className="relative mb-6 leading-none">
               <h2 className="font-script text-[#d17c46] text-5xl sm:text-6xl md:text-8xl absolute -top-8 md:-top-16 left-2 sm:left-6 md:left-12 -rotate-2 z-10 drop-shadow-lg">
-                Place
+                Cafe
               </h2>
               <h1 className="font-sans font-black text-[80px] sm:text-8xl md:text-[160px] tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-gray-500 uppercase leading-[0.85]">
-                Coffee
+                Bohnea
               </h1>
             </div>
 
