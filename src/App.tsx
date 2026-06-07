@@ -119,12 +119,7 @@ export default function App() {
               </button>
             </div>
 
-            {/* Website Link */}
-            <div className="mt-8 md:mt-16 pl-2">
-              <a href="#" className="text-[#d17c46] hover:text-[#de884b] transition-colors font-medium text-sm tracking-widest">
-                www.website.com
-              </a>
-            </div>
+
 
           </div>
 
