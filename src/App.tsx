@@ -111,12 +111,18 @@ export default function App() {
 
             {/* Actions / Buttons */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mt-10 md:mt-12 pl-2">
-              <button className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-white w-full sm:w-auto px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#b35e2b]/20">
-                Order Now
-              </button>
-              <button className="text-white/80 hover:text-white font-semibold text-sm transition-colors w-full sm:w-auto bg-transparent border border-white/20 px-8 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/10">
+              <a 
+                href="#reservation"
+                className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] w-full sm:w-auto px-8 md:px-10 py-3.5 md:py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#b35e2b]/20 text-center cursor-pointer"
+              >
+                Reserve Table
+              </a>
+              <a 
+                href="#about"
+                className="text-white/80 hover:text-white font-semibold text-sm transition-colors w-full sm:w-auto bg-transparent border border-white/20 px-8 py-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-white/10 text-center cursor-pointer"
+              >
                 View More <span className="text-lg leading-none">&rarr;</span>
-              </button>
+              </a>
             </div>
 
 
