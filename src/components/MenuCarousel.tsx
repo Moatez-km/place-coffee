@@ -59,9 +59,14 @@ export function MenuCarousel() {
       </Swiper>
       
       <div className="flex justify-center mt-8">
-        <button className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-white px-10 py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#b35e2b]/20">
+        <a 
+          href="/BohneaMenu.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-white px-10 py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#b35e2b]/20 inline-block text-center cursor-pointer"
+        >
           Check our Menu
-        </button>
+        </a>
       </div>
 
       <style dangerouslySetInnerHTML={{__html: `
