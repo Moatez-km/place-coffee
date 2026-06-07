@@ -174,7 +174,7 @@ export default function App() {
               </div>
             </div>
             
-            <div className="flex gap-8 text-xs font-semibold text-white/50">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs font-semibold text-white/50">
               <a href="#home" className="hover:text-[#d17c46] transition-colors">Home</a>
               <a href="#menu" className="hover:text-[#d17c46] transition-colors">Menu</a>
               <a href="#about" className="hover:text-[#d17c46] transition-colors">About</a>
