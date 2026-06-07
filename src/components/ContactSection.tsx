@@ -72,9 +72,9 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-bold text-white mb-1 uppercase text-xs tracking-wider">Call Us</h4>
-                  <p className="text-white/60 text-sm font-medium hover:text-[#d17c46] transition-colors">
-                    +49 (0) 361 1234567
-                  </p>
+                  <a href="tel:036164414076" className="text-white/60 text-sm font-medium hover:text-[#d17c46] transition-colors block">
+                    0361 64414076
+                  </a>
                 </div>
               </div>
 
