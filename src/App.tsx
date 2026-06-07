@@ -8,6 +8,7 @@ import React from 'react';
 import { MenuCarousel } from './components/MenuCarousel';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
+import { ReservationSection } from './components/ReservationSection';
 
 export default function App() {
   return (
@@ -61,6 +62,7 @@ export default function App() {
             <a href="#home" className="hover:text-[#d17c46] transition-colors">Home</a>
             <a href="#menu" className="hover:text-[#d17c46] transition-colors">Menu</a>
             <a href="#about" className="hover:text-[#d17c46] transition-colors">About</a>
+            <a href="#reservation" className="hover:text-[#d17c46] transition-colors">Book Table</a>
             <a href="#contact" className="hover:text-[#d17c46] transition-colors">Contact</a>
           </nav>
           
@@ -146,6 +148,9 @@ export default function App() {
         {/* About Section */}
         <AboutSection />
 
+        {/* Reservation Section */}
+        <ReservationSection />
+
         {/* Contact Section */}
         <ContactSection />
 
@@ -166,6 +171,7 @@ export default function App() {
               <a href="#home" className="hover:text-[#d17c46] transition-colors">Home</a>
               <a href="#menu" className="hover:text-[#d17c46] transition-colors">Menu</a>
               <a href="#about" className="hover:text-[#d17c46] transition-colors">About</a>
+              <a href="#reservation" className="hover:text-[#d17c46] transition-colors">Reservation</a>
               <a href="#contact" className="hover:text-[#d17c46] transition-colors">Contact</a>
             </div>
 
