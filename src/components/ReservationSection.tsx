@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Calendar, Users, Clock, Coffee, Sparkles, CheckCircle2 } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 export function ReservationSection() {
   const [formData, setFormData] = useState({
@@ -23,23 +22,30 @@ export function ReservationSection() {
       setSendError('');
       const ref = `BOH-${Math.floor(1000 + Math.random() * 9000)}`;
       try {
-        await emailjs.send(
-          import.meta.env.VITE_EMAILJS_SERVICE_ID,
-          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          {
-            booking_ref: ref,
-            guest_name: formData.name,
-            guest_email: formData.email,
-            date: formData.date,
-            time: formData.time,
-            guests: formData.guests,
-            area: formData.area,
-            to_email: 'moatez.kamounn@gmail.com',
-          },
-          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-        );
-        setBookingRef(ref);
-        setIsReserved(true);
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+            subject: `🍵 New Reservation — ${ref}`,
+            from_name: `${formData.name} (via Place Coffee)`,
+            replyto: formData.email,
+            'Booking Ref': ref,
+            'Guest Name': formData.name,
+            'Guest Email': formData.email,
+            'Date': formData.date,
+            'Time': formData.time,
+            'Guests': formData.guests,
+            'Seating Area': formData.area,
+          }),
+        });
+        const data = await res.json();
+        if (data.success) {
+          setBookingRef(ref);
+          setIsReserved(true);
+        } else {
+          throw new Error(data.message || 'Unknown error');
+        }
       } catch (err) {
         setSendError('Failed to send reservation. Please try again or call us directly.');
       } finally {
