@@ -4,7 +4,7 @@ import { Calendar, Users, Clock, Coffee, Sparkles, CheckCircle2 } from 'lucide-r
 export function ReservationSection() {
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
+    email: '',
     guests: '2 People',
     date: '',
     time: '10:00 AM',
@@ -15,7 +15,7 @@ export function ReservationSection() {
 
   const handleReserve = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.phone && formData.date) {
+    if (formData.name && formData.email && formData.date) {
       // Generate a random mock booking reference
       const ref = `BOH-${Math.floor(1000 + Math.random() * 9000)}`;
       setBookingRef(ref);
@@ -27,7 +27,7 @@ export function ReservationSection() {
     setIsReserved(false);
     setFormData({
       name: '',
-      phone: '',
+      email: '',
       guests: '2 People',
       date: '',
       time: '10:00 AM',
@@ -78,15 +78,15 @@ export function ReservationSection() {
                   />
                 </div>
 
-                {/* Phone Number */}
+                {/* Email Address */}
                 <div className="flex flex-col">
-                  <label className="text-xs uppercase text-white/50 mb-2 tracking-wider font-semibold">Phone Number</label>
+                  <label className="text-xs uppercase text-white/50 mb-2 tracking-wider font-semibold">Email Address</label>
                   <input 
-                    type="tel" 
+                    type="email" 
                     required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+49 176 1234567" 
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="your@email.com" 
                     className="w-full bg-[#0d0603]/80 border border-coffee-line rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/30 focus:border-[#d17c46] focus:ring-1 focus:ring-[#d17c46] transition-all outline-none"
                   />
                 </div>
@@ -218,8 +218,8 @@ export function ReservationSection() {
                     <span className="font-semibold text-white">{formData.guests}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase text-white/40 tracking-wider block mb-0.5">Phone Contact</span>
-                    <span className="font-semibold text-white truncate block">{formData.phone}</span>
+                    <span className="text-[10px] uppercase text-white/40 tracking-wider block mb-0.5">Email</span>
+                    <span className="font-semibold text-white truncate block">{formData.email}</span>
                   </div>
                 </div>
               </div>

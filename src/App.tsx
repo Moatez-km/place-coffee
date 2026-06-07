@@ -97,8 +97,8 @@ export default function App() {
             </div>
 
             {/* Subtitle / Paragraph */}
-            <p className="text-white/70 max-w-sm mt-4 md:mt-2 text-sm md:text-base leading-relaxed pl-2 font-medium">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+            <p className="text-white/70 max-w-md mt-4 md:mt-2 text-sm md:text-base leading-relaxed pl-2 font-medium">
+              Start your day with the perfect blend of passion, flavor, and energy—because great coffee isn't just a drink, it's an experience.
             </p>
 
             {/* Coffee Type Cards */}
