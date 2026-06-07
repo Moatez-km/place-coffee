@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Users, Clock, Coffee, Sparkles, CheckCircle2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export function ReservationSection() {
   const [formData, setFormData] = useState({
@@ -12,14 +13,38 @@ export function ReservationSection() {
   });
   const [bookingRef, setBookingRef] = useState('');
   const [isReserved, setIsReserved] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState('');
 
-  const handleReserve = (e: React.FormEvent) => {
+  const handleReserve = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.date) {
-      // Generate a random mock booking reference
+      setIsSending(true);
+      setSendError('');
       const ref = `BOH-${Math.floor(1000 + Math.random() * 9000)}`;
-      setBookingRef(ref);
-      setIsReserved(true);
+      try {
+        await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            booking_ref: ref,
+            guest_name: formData.name,
+            guest_email: formData.email,
+            date: formData.date,
+            time: formData.time,
+            guests: formData.guests,
+            area: formData.area,
+            to_email: 'moatez.kamounn@gmail.com',
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+        setBookingRef(ref);
+        setIsReserved(true);
+      } catch (err) {
+        setSendError('Failed to send reservation. Please try again or call us directly.');
+      } finally {
+        setIsSending(false);
+      }
     }
   };
 
@@ -165,12 +190,23 @@ export function ReservationSection() {
 
               {/* Submit Button */}
               <button 
-                type="submit" 
-                className="w-full mt-6 bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] font-black text-sm uppercase py-4 px-6 rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-[#b35e2b]/15 cursor-pointer"
+                type="submit"
+                disabled={isSending}
+                className="w-full mt-6 bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] font-black text-sm uppercase py-4 px-6 rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-[#b35e2b]/15 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                <span>Confirm Reservation</span>
-                <Sparkles size={16} />
+                {isSending ? (
+                  <span className="animate-pulse">Sending Reservation…</span>
+                ) : (
+                  <>
+                    <span>Confirm Reservation</span>
+                    <Sparkles size={16} />
+                  </>
+                )}
               </button>
+
+              {sendError && (
+                <p className="text-red-400 text-xs text-center mt-3 font-medium">{sendError}</p>
+              )}
 
             </form>
           ) : (
