@@ -69,14 +69,14 @@ export default function App() {
             <a href="#contact" className="hover:text-[#d17c46] transition-colors">Contact</a>
           </nav>
           
-          {/* Action Icons */}
-          <div className="flex items-center gap-6">
-            <button className="text-white/90 hover:text-white transition-transform hover:scale-110">
-              <Search size={22} />
-            </button>
-            <button className="text-white bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
-              <Menu size={22} />
-            </button>
+          {/* Action Button */}
+          <div className="flex items-center">
+            <a 
+              href="#reservation" 
+              className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] px-5 sm:px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm hover:opacity-95 transition-opacity shadow-lg shadow-[#b35e2b]/15 cursor-pointer text-center whitespace-nowrap animate-pulse hover:animate-none"
+            >
+              Reserve table
+            </a>
           </div>
         </header>
 
