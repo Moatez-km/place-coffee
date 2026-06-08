@@ -130,7 +130,7 @@ export default function App() {
           </div>
 
           {/* Right Column - Big Image */}
-          <div className="w-full md:w-2/5 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 flex items-center justify-center mt-12 md:mt-0 z-0 h-[400px] md:h-[600px] select-none pointer-events-none">
+          <div className="hidden md:flex md:w-2/5 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 items-center justify-center md:mt-0 z-0 md:h-[600px] select-none pointer-events-none">
             <img 
               src="https://images.unsplash.com/photo-1550478144-884812ae93be?w=1000&auto=format&fit=crop&q=80" 
               alt="Steaming Cup of Coffee"
