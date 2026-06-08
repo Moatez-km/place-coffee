@@ -1,18 +1,44 @@
 import React, { useState } from 'react';
-import { MapPin, Clock, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Clock, Phone, Mail, Send, CheckCircle2 } from 'lucide-react';
 
 export function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({ name: '', email: '', message: '' });
-      }, 3000);
+      setIsSending(true);
+      setSendError('');
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+            to: 'moaez.kamounn@mail.com',
+            subject: `✉️ New Contact Message from ${formData.name}`,
+            from_name: `${formData.name} (via Place Coffee)`,
+            replyto: formData.email,
+            'Sender Name': formData.name,
+            'Sender Email': formData.email,
+            'Message': formData.message,
+          }),
+        });
+        const data = await res.json();
+        if (data.success) {
+          setIsSubmitted(true);
+          setFormData({ name: '', email: '', message: '' });
+        } else {
+          throw new Error(data.message || 'Unknown error');
+        }
+      } catch (err) {
+        setSendError('Failed to send message. Please try again or email us directly.');
+      } finally {
+        setIsSending(false);
+      }
     }
   };
 
@@ -138,11 +164,16 @@ export function ContactSection() {
                 </div>
 
                 <button 
-                  type="submit" 
-                  className="w-full bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] font-bold text-sm uppercase py-3.5 px-6 rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-[#b35e2b]/15 cursor-pointer"
+                  type="submit"
+                  disabled={isSending || isSubmitted}
+                  className="w-full bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] font-bold text-sm uppercase py-3.5 px-6 rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-[#b35e2b]/15 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {isSubmitted ? (
-                    <span className="text-white font-black animate-pulse">Message Sent Successfully!</span>
+                  {isSending ? (
+                    <span className="animate-pulse">Sending…</span>
+                  ) : isSubmitted ? (
+                    <span className="flex items-center gap-2 text-white font-black">
+                      <CheckCircle2 size={15} /> Message Sent!
+                    </span>
                   ) : (
                     <>
                       <span>Send Message</span>
@@ -150,6 +181,10 @@ export function ContactSection() {
                     </>
                   )}
                 </button>
+
+                {sendError && (
+                  <p className="text-red-400 text-xs text-center mt-3 font-medium">{sendError}</p>
+                )}
               </form>
             </div>
 
