@@ -103,10 +103,10 @@ export default function App() {
 
             {/* Coffee Type Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8 md:mt-12 max-w-2xl pl-2">
-              <CoffeeTypeCard title="Espresso" desc="Lorem ipsum amet consectetur." />
-              <CoffeeTypeCard title="Latte" desc="Lorem ipsum amet consectetur." />
-              <CoffeeTypeCard title="Coffee" desc="Lorem ipsum amet consectetur." />
-              <CoffeeTypeCard title="Cappuccino" desc="Lorem ipsum amet consectetur." />
+              <CoffeeTypeCard title="Espresso" desc="Pure coffee perfection with a strong, concentrated flavor." />
+              <CoffeeTypeCard title="Latte" desc="Creamy, silky, and perfectly balanced for a comforting experience." />
+              <CoffeeTypeCard title="Coffee" desc="Crafted from carefully selected beans for a rich, authentic taste." />
+              <CoffeeTypeCard title="Cappuccino" desc="A classic favorite topped with smooth, airy milk foam." />
             </div>
 
             {/* Actions / Buttons */}
