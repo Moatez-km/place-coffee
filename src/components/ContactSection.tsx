@@ -19,12 +19,12 @@ export function ContactSection() {
           body: JSON.stringify({
             access_key: import.meta.env.VITE_WEB3FORMS_KEY,
             to: 'moaez.kamounn@mail.com',
-            subject: `✉️ New Contact Message from ${formData.name}`,
+            subject: `✉️ Neue Kontaktnachricht von ${formData.name}`,
             from_name: `${formData.name} (via Place Coffee)`,
             replyto: formData.email,
-            'Sender Name': formData.name,
-            'Sender Email': formData.email,
-            'Message': formData.message,
+            'Name des Absenders': formData.name,
+            'E-Mail des Absenders': formData.email,
+            'Nachricht': formData.message,
           }),
         });
         const data = await res.json();
@@ -35,7 +35,7 @@ export function ContactSection() {
           throw new Error(data.message || 'Unknown error');
         }
       } catch (err) {
-        setSendError('Failed to send message. Please try again or email us directly.');
+        setSendError('Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt eine E-Mail.');
       } finally {
         setIsSending(false);
       }
@@ -50,9 +50,9 @@ export function ContactSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <span className="font-script text-[#d17c46] text-3xl sm:text-4xl">Visit Us</span>
+          <span className="font-script text-[#d17c46] text-3xl sm:text-4xl">Besuchen Sie uns</span>
           <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
-            Get in Touch
+            Kontakt
           </h2>
           <div className="w-16 h-1 bg-[#d17c46] mx-auto mt-4 rounded-full" />
         </div>
@@ -71,9 +71,9 @@ export function ContactSection() {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-1 uppercase text-xs tracking-wider">Location</h4>
+                  <h4 className="font-bold text-white mb-1 uppercase text-xs tracking-wider">Standort</h4>
                   <p className="text-white/60 text-sm leading-relaxed font-medium">
-                    Regierungsstraße 62,<br />99084 Erfurt, Germany
+                    Regierungsstraße 62,<br />99084 Erfurt, Deutschland
                   </p>
                 </div>
               </div>
@@ -84,9 +84,9 @@ export function ContactSection() {
                   <Clock size={20} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-1 uppercase text-xs tracking-wider">Opening Hours</h4>
+                  <h4 className="font-bold text-white mb-1 uppercase text-xs tracking-wider">Öffnungszeiten</h4>
                   <p className="text-white/60 text-sm leading-relaxed font-medium">
-                    Mon - Fri: 8:00 - 18:00<br />Sat - Sun: 9:00 - 17:00
+                    Mon - Fr: 8:00 - 18:00 Uhr<br />Sa - So: 9:00 - 17:00 Uhr
                   </p>
                 </div>
               </div>
@@ -97,7 +97,7 @@ export function ContactSection() {
                   <Phone size={20} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-1 uppercase text-xs tracking-wider">Call Us</h4>
+                  <h4 className="font-bold text-white mb-1 uppercase text-xs tracking-wider">Rufen Sie uns an</h4>
                   <a href="tel:036164414076" className="text-white/60 text-sm font-medium hover:text-[#d17c46] transition-colors block">
                     0361 64414076
                   </a>
@@ -110,7 +110,7 @@ export function ContactSection() {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-1 uppercase text-xs tracking-wider">Write Us</h4>
+                  <h4 className="font-bold text-white mb-1 uppercase text-xs tracking-wider">Schreiben Sie uns</h4>
                   <p className="text-white/60 text-sm font-medium hover:text-[#d17c46] transition-colors break-all">
                     hello@bohnea-cafe.de
                   </p>
@@ -122,13 +122,13 @@ export function ContactSection() {
             {/* Form Box */}
             <div className="p-6 sm:p-8 rounded-2xl bg-coffee-card/25 border border-coffee-line/50 backdrop-blur-sm">
               <h3 className="text-xl font-black mb-6 uppercase text-white tracking-wide">
-                Send a Message
+                Nachricht senden
               </h3>
               
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="flex flex-col">
-                    <label className="text-xs uppercase text-white/50 mb-2 tracking-wider font-semibold">Your Name</label>
+                    <label className="text-xs uppercase text-white/50 mb-2 tracking-wider font-semibold">Ihr Name</label>
                     <input 
                       type="text" 
                       required
@@ -139,26 +139,26 @@ export function ContactSection() {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <label className="text-xs uppercase text-white/50 mb-2 tracking-wider font-semibold">Email Address</label>
+                    <label className="text-xs uppercase text-white/50 mb-2 tracking-wider font-semibold">E-Mail-Adresse</label>
                     <input 
                       type="email" 
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="john@example.com" 
+                      placeholder="max@mustermann.de" 
                       className="w-full bg-[#0d0603]/80 border border-coffee-line rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:border-[#d17c46] focus:ring-1 focus:ring-[#d17c46] transition-all outline-none"
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col">
-                  <label className="text-xs uppercase text-white/50 mb-2 tracking-wider font-semibold">Message</label>
+                  <label className="text-xs uppercase text-white/50 mb-2 tracking-wider font-semibold">Nachricht</label>
                   <textarea 
                     rows={4} 
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell us about your catering needs, event request, or just say hello..." 
+                    placeholder="Teilen Sie uns Ihre Wünsche zu Catering, Events oder einfach ein nettes Hallo mit..." 
                     className="w-full bg-[#0d0603]/80 border border-coffee-line rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:border-[#d17c46] focus:ring-1 focus:ring-[#d17c46] transition-all outline-none resize-none"
                   />
                 </div>
@@ -169,14 +169,14 @@ export function ContactSection() {
                   className="w-full bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] font-bold text-sm uppercase py-3.5 px-6 rounded-xl hover:opacity-95 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-[#b35e2b]/15 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isSending ? (
-                    <span className="animate-pulse">Sending…</span>
+                    <span className="animate-pulse">Wird gesendet…</span>
                   ) : isSubmitted ? (
                     <span className="flex items-center gap-2 text-white font-black">
-                      <CheckCircle2 size={15} /> Message Sent!
+                      <CheckCircle2 size={15} /> Nachricht gesendet!
                     </span>
                   ) : (
                     <>
-                      <span>Send Message</span>
+                      <span>Nachricht senden</span>
                       <Send size={15} />
                     </>
                   )}

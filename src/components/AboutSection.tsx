@@ -20,7 +20,7 @@ export function AboutSection() {
               <div className="absolute inset-0 bg-[#0d0603]/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
               <img 
                 src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&h=800&auto=format&fit=crop&q=80" 
-                alt="Fresh Roasted Beans and Filter Coffee" 
+                alt="Frisch geröstete Bohnen und Filterkaffee" 
                 className="w-full h-[350px] sm:h-[450px] object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -30,7 +30,7 @@ export function AboutSection() {
               <div className="absolute inset-0 bg-[#0d0603]/15 group-hover:bg-transparent transition-colors duration-500 z-10" />
               <img 
                 src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&h=800&auto=format&fit=crop&q=80" 
-                alt="Barista brewing coffee" 
+                alt="Barista brüht Kaffee" 
                 className="w-full h-[350px] sm:h-[450px] object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -39,7 +39,7 @@ export function AboutSection() {
             <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 sm:-translate-x-0 sm:left-4 bg-[#d17c46] text-[#0d0603] px-6 py-4 rounded-xl font-bold flex items-center gap-3 shadow-xl z-20">
               <Coffee size={24} className="animate-pulse" />
               <div>
-                <div className="text-xs uppercase tracking-wider opacity-80">Est. Since</div>
+                <div className="text-xs uppercase tracking-wider opacity-80">Seit</div>
                 <div className="text-xl font-black">2021</div>
               </div>
             </div>
@@ -51,7 +51,7 @@ export function AboutSection() {
             {/* Title Block */}
             <div className="relative mb-6">
               <span className="font-script text-[#d17c46] text-4xl sm:text-5xl block -mb-2">
-                Discover
+                Entdecken Sie
               </span>
               <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-gray-400">
                 Bohnea Café & Rösterei
@@ -60,11 +60,11 @@ export function AboutSection() {
 
             {/* Main Paragraphs */}
             <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-6 font-medium">
-              Nestled in the heart of Erfurt, Germany, Bohnea Café & Rösterei is more than just a destination for coffee—it is a haven of craftsmanship. We select the finest single-origin Arabica beans from sustainable, ethical farms around the globe.
+              Im Herzen von Erfurt, Deutschland, gelegen, ist das Bohnea Café & Rösterei mehr als nur eine Anlaufstelle für Kaffee – es ist eine Oase des Handwerks. Wir wählen die feinsten Single-Origin Arabica-Bohnen von nachhaltigen und ethischen Farmen weltweit aus.
             </p>
             
             <p className="text-white/60 text-sm sm:text-base leading-relaxed mb-10">
-              Every batch is micro-roasted on-site with meticulous precision to bring out the native flavor notes, ranging from bright and fruity to deep chocolatey profiles. Our certified baristas brew every single cup with passion, ensuring that you experience the ultimate story behind every bean.
+              Jede Charge wird vor Ort mit akribischer Präzision mikrogeröstet, um die feinen, natürlichen Geschmacksnoten hervorzuheben, die von hell und fruchtig bis hin zu tiefen, schokoladigen Profilen reichen. Unsere zertifizierten Baristas brühen jede einzelne Tasse mit Leidenschaft, um sicherzustellen, dass Sie die einzigartige Geschichte hinter jeder Bohne schmecken.
             </p>
 
             {/* Features/Stats Grid */}
@@ -76,10 +76,10 @@ export function AboutSection() {
                   <Flame size={24} strokeWidth={1.5} />
                 </div>
                 <h3 className="font-bold text-white/90 text-sm mb-1.5 uppercase tracking-wide">
-                  In-House Roasting
+                  Eigene Röstung
                 </h3>
                 <p className="text-white/55 text-xs leading-normal">
-                  Micro-roasted in small batches to preserve unique aromatic profiles.
+                  In kleinen Chargen mikrogeröstet, um die einzigartigen Aromaprofile zu bewahren.
                 </p>
               </div>
 
@@ -89,10 +89,10 @@ export function AboutSection() {
                   <Globe size={24} strokeWidth={1.5} />
                 </div>
                 <h3 className="font-bold text-white/90 text-sm mb-1.5 uppercase tracking-wide">
-                  Direct Trade
+                  Direkter Handel
                 </h3>
                 <p className="text-white/55 text-xs leading-normal">
-                  Sourced ethically from micro-lots to support local farming communities.
+                  Ethisch bezogen aus Kleinstmengen (Micro-Lots), um lokale Kaffeebauern zu unterstützen.
                 </p>
               </div>
 
@@ -102,10 +102,10 @@ export function AboutSection() {
                   <Sparkles size={24} strokeWidth={1.5} />
                 </div>
                 <h3 className="font-bold text-white/90 text-sm mb-1.5 uppercase tracking-wide">
-                  Barista Craft
+                  Baristakunst
                 </h3>
                 <p className="text-white/55 text-xs leading-normal">
-                  Carefully brewed using V60, Chemex, or espresso for perfect extractions.
+                  Sorgfältig gebrüht mit V60, Chemex oder als Espresso für die perfekte Extraktion.
                 </p>
               </div>
 

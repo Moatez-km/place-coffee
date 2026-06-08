@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { Search, Menu, Twitter, Instagram, Youtube, Coffee, CupSoda } from 'lucide-react';
 import React from 'react';
 import { MenuCarousel } from './components/MenuCarousel';
@@ -63,10 +58,10 @@ export default function App() {
           {/* Nav Links */}
           <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-white/90">
             <a href="#home" className="hover:text-[#d17c46] transition-colors">Home</a>
-            <a href="#menu" className="hover:text-[#d17c46] transition-colors">Menu</a>
-            <a href="#about" className="hover:text-[#d17c46] transition-colors">About</a>
-            <a href="#reservation" className="hover:text-[#d17c46] transition-colors">Book Table</a>
-            <a href="#contact" className="hover:text-[#d17c46] transition-colors">Contact</a>
+            <a href="#menu" className="hover:text-[#d17c46] transition-colors">Speisekarte</a>
+            <a href="#about" className="hover:text-[#d17c46] transition-colors">Über uns</a>
+            <a href="#reservation" className="hover:text-[#d17c46] transition-colors">Tisch reservieren</a>
+            <a href="#contact" className="hover:text-[#d17c46] transition-colors">Kontakt</a>
           </nav>
           
           {/* Action Button */}
@@ -75,7 +70,7 @@ export default function App() {
               href="#reservation" 
               className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] px-5 sm:px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm hover:opacity-95 transition-opacity shadow-lg shadow-[#b35e2b]/15 cursor-pointer text-center whitespace-nowrap animate-pulse hover:animate-none"
             >
-              Reserve table
+              Tisch reservieren
             </a>
           </div>
         </header>
@@ -98,15 +93,15 @@ export default function App() {
 
             {/* Subtitle / Paragraph */}
             <p className="text-white/70 max-w-md mt-4 md:mt-2 text-sm md:text-base leading-relaxed pl-2 font-medium">
-              Start your day with the perfect blend of passion, flavor, and energy—because great coffee isn't just a drink, it's an experience.
+              Beginnen Sie Ihren Tag mit der perfekten Mischung aus Leidenschaft, Geschmack und Energie – denn großartiger Kaffee ist nicht nur ein Getränk, sondern ein Erlebnis.
             </p>
 
             {/* Coffee Type Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8 md:mt-12 max-w-2xl pl-2">
-              <CoffeeTypeCard title="Espresso" desc="Pure coffee perfection with a strong, concentrated flavor." />
-              <CoffeeTypeCard title="Latte" desc="Creamy, silky, and perfectly balanced for a comforting experience." />
-              <CoffeeTypeCard title="Coffee" desc="Crafted from carefully selected beans for a rich, authentic taste." />
-              <CoffeeTypeCard title="Cappuccino" desc="A classic favorite topped with smooth, airy milk foam." />
+              <CoffeeTypeCard title="Espresso" desc="Reine Kaffeeperfektion mit einem kräftigen, konzentrierten Geschmack." />
+              <CoffeeTypeCard title="Latte" desc="Cremig, seidig und perfekt ausgewogen für einen wärmenden Genuss." />
+              <CoffeeTypeCard title="Kaffee" desc="Hergestellt aus sorgfältig ausgewählten Bohnen für einen reichen, authentischen Geschmack." />
+              <CoffeeTypeCard title="Cappuccino" desc="Ein klassischer Favorit, gekrönt mit feinem, luftigem Milchschaum." />
             </div>
 
             {/* Actions / Buttons */}
@@ -115,17 +110,15 @@ export default function App() {
                 href="#reservation"
                 className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] w-full sm:w-auto px-8 md:px-10 py-3.5 md:py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#b35e2b]/20 text-center cursor-pointer"
               >
-                Reserve Table
+                Tisch reservieren
               </a>
               <a 
                 href="#about"
                 className="text-white/80 hover:text-white font-semibold text-sm transition-colors w-full sm:w-auto bg-transparent border border-white/20 px-8 py-3.5 rounded-full flex items-center justify-center gap-2 hover:bg-white/10 text-center cursor-pointer"
               >
-                View More <span className="text-lg leading-none">&rarr;</span>
+                Mehr erfahren <span className="text-lg leading-none">&rarr;</span>
               </a>
             </div>
-
-
 
           </div>
 
@@ -133,7 +126,7 @@ export default function App() {
           <div className="hidden md:flex md:w-2/5 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 items-center justify-center md:mt-0 z-0 md:h-[600px] select-none pointer-events-none">
             <img 
               src="https://images.unsplash.com/photo-1550478144-884812ae93be?w=1000&auto=format&fit=crop&q=80" 
-              alt="Steaming Cup of Coffee"
+              alt="Dampfende Tasse Kaffee"
               className="w-full h-full object-cover object-center opacity-90 rounded-full md:rounded-none drop-shadow-2xl mix-blend-lighten"
               style={{
                 maskImage: 'radial-gradient(circle, black 35%, transparent 70%)',
@@ -171,20 +164,20 @@ export default function App() {
               </div>
               <div>
                 <span className="font-bold text-white text-sm tracking-wider uppercase">Bohnea Café</span>
-                <p className="text-[10px] text-white/40">© 2026. All rights reserved.</p>
+                <p className="text-[10px] text-white/40">© 2026. Alle Rechte vorbehalten.</p>
               </div>
             </div>
             
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs font-semibold text-white/50">
               <a href="#home" className="hover:text-[#d17c46] transition-colors">Home</a>
-              <a href="#menu" className="hover:text-[#d17c46] transition-colors">Menu</a>
-              <a href="#about" className="hover:text-[#d17c46] transition-colors">About</a>
-              <a href="#reservation" className="hover:text-[#d17c46] transition-colors">Reservation</a>
-              <a href="#contact" className="hover:text-[#d17c46] transition-colors">Contact</a>
+              <a href="#menu" className="hover:text-[#d17c46] transition-colors">Speisekarte</a>
+              <a href="#about" className="hover:text-[#d17c46] transition-colors">Über uns</a>
+              <a href="#reservation" className="hover:text-[#d17c46] transition-colors">Reservierung</a>
+              <a href="#contact" className="hover:text-[#d17c46] transition-colors">Kontakt</a>
             </div>
 
             <div className="text-[10px] text-white/30 text-center md:text-right">
-              Crafted in Erfurt, Germany. Sourced globally.
+              Handgefertigt in Erfurt, Deutschland. Global bezogen.
             </div>
           </div>
         </footer>
@@ -202,7 +195,7 @@ function CoffeeTypeCard({ title, desc }: { title: string, desc: string }) {
         <CupSoda size={18} strokeWidth={1.5} />
       </div>
       <h3 className="font-bold text-white/90 text-[10px] md:text-sm mb-1">{title}</h3>
-      <p className="text-white/50 text-[8px] md:text-[10px] leading-tight">{desc}</p>
+      <p className="text-white/55 text-[8px] md:text-[10px] leading-tight">{desc}</p>
     </div>
   );
 }

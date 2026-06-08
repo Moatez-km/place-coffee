@@ -11,19 +11,19 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay, FreeMode } from 'swiper/modules';
 
 const menuItems = [
-  { id: 1, title: 'Signature Espresso', image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&h=900&auto=format&fit=crop&q=80', desc: 'Rich and intense.' },
-  { id: 2, title: 'Iced Caramel Latte', image: 'https://images.unsplash.com/photo-1557142046-c704a3adf364?w=600&h=900&auto=format&fit=crop&q=80', desc: 'Sweet caramel swirls.' },
+  { id: 1, title: 'Signature Espresso', image: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&h=900&auto=format&fit=crop&q=80', desc: 'Kräftig und intensiv.' },
+  { id: 2, title: 'Iced Caramel Latte', image: 'https://images.unsplash.com/photo-1557142046-c704a3adf364?w=600&h=900&auto=format&fit=crop&q=80', desc: 'Süße Karamellwirbel.' },
 
-  { id: 4, title: 'Blueberry Drink', image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&h=900&auto=format&fit=crop&q=80', desc: 'Fruity and refreshing.' },
-  { id: 5, title: 'Cold Brew', image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600&h=900&auto=format&fit=crop&q=80', desc: 'Steeped to perfection.' },
-  { id: 6, title: 'Mocha Frappuccino', image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&h=900&auto=format&fit=crop&q=80', desc: 'Chocolatey delight.' },
+  { id: 4, title: 'Heidelbeer-Drink', image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&h=900&auto=format&fit=crop&q=80', desc: 'Fruchtig und erfrischend.' },
+  { id: 5, title: 'Cold Brew', image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600&h=900&auto=format&fit=crop&q=80', desc: 'Perfekt gereift.' },
+  { id: 6, title: 'Mokka-Frappuccino', image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&h=900&auto=format&fit=crop&q=80', desc: 'Schokoladiger Genuss.' },
 ];
 
 export function MenuCarousel() {
   return (
     <div className="w-full max-w-7xl mx-auto py-8 md:py-12 px-4 relative z-20 overflow-hidden">
       <h2 className="text-3xl md:text-5xl font-black text-center mb-8 md:mb-12 uppercase tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-gray-400">
-        Our <span className="text-coffee-brand">Menu</span>
+        Unsere <span className="text-coffee-brand">Speisekarte</span>
       </h2>
       
       <Swiper
@@ -65,7 +65,7 @@ export function MenuCarousel() {
           rel="noopener noreferrer"
           className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-white px-10 py-4 rounded-full font-bold text-sm hover:opacity-90 transition-opacity shadow-lg shadow-[#b35e2b]/20 inline-block text-center cursor-pointer"
         >
-          Check our Menu
+          Speisekarte ansehen
         </a>
       </div>
 
