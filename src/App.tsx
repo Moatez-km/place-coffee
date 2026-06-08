@@ -98,10 +98,10 @@ export default function App() {
 
             {/* Coffee Type Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8 md:mt-12 max-w-2xl pl-2">
-              <CoffeeTypeCard title="Espresso" desc="Reine Kaffeeperfektion mit einem kräftigen, konzentrierten Geschmack." />
-              <CoffeeTypeCard title="Latte" desc="Cremig, seidig und perfekt ausgewogen für einen wärmenden Genuss." />
-              <CoffeeTypeCard title="Kaffee" desc="Hergestellt aus sorgfältig ausgewählten Bohnen für einen reichen, authentischen Geschmack." />
-              <CoffeeTypeCard title="Cappuccino" desc="Ein klassischer Favorit, gekrönt mit feinem, luftigem Milchschaum." />
+              <CoffeeTypeCard title="Espresso" desc="Kräftig, aromatisch und voller Energie." />
+              <CoffeeTypeCard title="Latte" desc="Cremig, mild und perfekt für jeden Tag." />
+              <CoffeeTypeCard title="Kaffee" desc="Frisch gebrüht aus ausgewählten Bohnen." />
+              <CoffeeTypeCard title="Cappuccino" desc="Feiner Milchschaum trifft starken Espresso." />
             </div>
 
             {/* Actions / Buttons */}
