@@ -50,8 +50,8 @@ export function MenuCarousel() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0d0603] via-[#0d0603]/50 to-transparent pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 text-left translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-2 leading-tight">{item.title}</h3>
-                <p className="text-white/80 text-base">{item.desc}</p>
+                <h3 className="text-xl md:text-3xl font-black text-white mb-2 leading-tight">{item.title}</h3>
+                <p className="text-white/80 text-sm md:text-base">{item.desc}</p>
               </div>
             </div>
           </SwiperSlide>

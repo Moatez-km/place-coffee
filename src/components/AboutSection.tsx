@@ -21,7 +21,7 @@ export function AboutSection() {
               <img 
                 src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&h=800&auto=format&fit=crop&q=80" 
                 alt="Frisch geröstete Bohnen und Filterkaffee" 
-                className="w-full h-[350px] sm:h-[450px] object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[450px] object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             
@@ -31,7 +31,7 @@ export function AboutSection() {
               <img 
                 src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&h=800&auto=format&fit=crop&q=80" 
                 alt="Barista brüht Kaffee" 
-                className="w-full h-[350px] sm:h-[450px] object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[450px] object-cover scale-100 group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             
@@ -53,7 +53,7 @@ export function AboutSection() {
               <span className="font-script text-[#d17c46] text-4xl sm:text-5xl block -mb-2">
                 Entdecken Sie
               </span>
-              <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-gray-400">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-gray-400">
                 Bohnea Café & Rösterei
               </h2>
             </div>

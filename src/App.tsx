@@ -1,13 +1,15 @@
-import { Search, Menu, Twitter, Instagram, Youtube, Coffee, CupSoda } from 'lucide-react';
-import React from 'react';
+import { Search, Menu, X, Twitter, Instagram, Youtube, Coffee, CupSoda } from 'lucide-react';
+import React, { useState } from 'react';
 import { MenuCarousel } from './components/MenuCarousel';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { ReservationSection } from './components/ReservationSection';
 
 export default function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <div id="home" className="min-h-screen w-full flex bg-coffee-bg text-white font-sans overflow-x-hidden relative">
+    <div id="home" className="min-h-screen w-full flex flex-col lg:flex-row bg-coffee-bg text-white font-sans overflow-x-hidden relative">
       
       {/* Home Page Background Video */}
       <div className="absolute top-0 left-0 w-full h-screen z-0 select-none pointer-events-none">
@@ -16,7 +18,7 @@ export default function App() {
           loop 
           muted 
           playsInline
-          className="w-full h-full object-cover object-right md:object-center opacity-40 md:opacity-60"
+          className="w-full h-full object-cover object-right lg:object-center opacity-40 lg:opacity-60"
           src="/background.mp4" 
         />
         {/* Smooth gradient at the bottom */}
@@ -24,7 +26,7 @@ export default function App() {
       </div>
 
       {/* Left Social Sidebar */}
-      <aside className="w-16 md:w-20 hidden md:flex flex-col items-center justify-center py-10 relative z-20">
+      <aside className="w-16 lg:w-20 hidden lg:flex flex-col items-center justify-center py-10 relative z-20">
         <div className="w-[1px] bg-white/20 h-16 flex-1 mb-8" />
         <div className="flex flex-col items-center gap-6">
           <a href="#" className="text-white/60 hover:text-white transition-colors">
@@ -41,10 +43,10 @@ export default function App() {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col relative w-full md:w-auto md:mr-10">
+      <main className="flex-1 flex flex-col relative w-full lg:w-auto lg:mr-10">
         
         {/* Navigation */}
-        <header className="flex items-center justify-between py-6 w-full relative z-20 px-4 md:px-0">
+        <header className="flex items-center justify-between py-6 w-full relative z-50 px-4 lg:px-0">
           
           {/* Brand Logo */}
           <div className="flex flex-col items-center justify-center w-14 h-14 rounded-full border border-[#8C7C73]/40 overflow-hidden cursor-pointer bg-white">
@@ -56,7 +58,7 @@ export default function App() {
           </div>
           
           {/* Nav Links */}
-          <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-white/90">
+          <nav className="hidden lg:flex items-center gap-10 text-sm font-medium text-white/90">
             <a href="#home" className="hover:text-[#d17c46] transition-colors">Home</a>
             <a href="#menu" className="hover:text-[#d17c46] transition-colors">Speisekarte</a>
             <a href="#about" className="hover:text-[#d17c46] transition-colors">Über uns</a>
@@ -64,29 +66,93 @@ export default function App() {
             <a href="#contact" className="hover:text-[#d17c46] transition-colors">Kontakt</a>
           </nav>
           
-          {/* Action Button */}
-          <div className="flex items-center">
+          {/* Action Button & Hamburger Toggle */}
+          <div className="flex items-center gap-4">
             <a 
               href="#reservation" 
-              className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] px-5 sm:px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm hover:opacity-95 transition-opacity shadow-lg shadow-[#b35e2b]/15 cursor-pointer text-center whitespace-nowrap animate-pulse hover:animate-none"
+              className="bg-gradient-to-r from-[#de884b] to-[#b35e2b] text-[#0d0603] px-4 sm:px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm hover:opacity-95 transition-opacity shadow-lg shadow-[#b35e2b]/15 cursor-pointer text-center whitespace-nowrap animate-pulse hover:animate-none"
             >
               Tisch reservieren
             </a>
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden text-white hover:text-[#d17c46] transition-colors focus:outline-none p-1.5 z-50 relative rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm"
+              aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </header>
 
+        {/* Mobile Navigation Overlay */}
+        <div className={`fixed inset-0 bg-[#0d0603]/98 backdrop-blur-xl z-45 flex flex-col justify-between py-24 px-8 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-10 pointer-events-none'}`}>
+          <nav className="flex flex-col gap-6 text-xl font-bold text-white/90 mt-8">
+            <a 
+              href="#home" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="hover:text-[#d17c46] transition-colors py-2 border-b border-coffee-line/40"
+            >
+              Home
+            </a>
+            <a 
+              href="#menu" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="hover:text-[#d17c46] transition-colors py-2 border-b border-coffee-line/40"
+            >
+              Speisekarte
+            </a>
+            <a 
+              href="#about" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="hover:text-[#d17c46] transition-colors py-2 border-b border-coffee-line/40"
+            >
+              Über uns
+            </a>
+            <a 
+              href="#reservation" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="hover:text-[#d17c46] transition-colors py-2 border-b border-coffee-line/40"
+            >
+              Tisch reservieren
+            </a>
+            <a 
+              href="#contact" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="hover:text-[#d17c46] transition-colors py-2"
+            >
+              Kontakt
+            </a>
+          </nav>
+          
+          {/* Social Links in Mobile Menu */}
+          <div className="flex flex-col items-center gap-6 pb-6">
+            <div className="flex gap-8">
+              <a href="#" className="text-white/60 hover:text-white transition-colors">
+                <Twitter size={24} />
+              </a>
+              <a href="#" className="text-white/60 hover:text-white transition-colors">
+                <Instagram size={24} />
+              </a>
+              <a href="#" className="text-white/60 hover:text-white transition-colors">
+                <Youtube size={24} />
+              </a>
+            </div>
+            <p className="text-[10px] text-white/40">© 2026 Bohnea Café. Alle Rechte vorbehalten.</p>
+          </div>
+        </div>
+
         {/* Hero Section */}
-        <section className="flex-1 flex flex-col md:flex-row items-center justify-between pb-10 relative z-10 px-4 md:px-0">
+        <section className="flex-1 flex flex-col lg:flex-row items-center justify-between pb-10 relative z-10 px-4 lg:px-0">
           
           {/* Left Column - Text Details */}
-          <div className="w-full md:w-3/5 flex flex-col mt-10 md:mt-0 relative z-20">
+          <div className="w-full lg:w-3/5 flex flex-col mt-10 lg:mt-0 relative z-20">
             
             {/* Titles */}
             <div className="relative mb-6 leading-none">
-              <h2 className="font-script text-[#d17c46] text-5xl sm:text-6xl md:text-8xl absolute -top-8 md:-top-16 left-2 sm:left-6 md:left-12 -rotate-2 z-10 drop-shadow-lg">
+              <h2 className="font-script text-[#d17c46] text-4xl sm:text-6xl lg:text-8xl absolute -top-6 sm:-top-8 lg:-top-16 left-2 sm:left-6 lg:left-12 -rotate-2 z-10 drop-shadow-lg">
                 Cafe
               </h2>
-              <h1 className="font-sans font-black text-[80px] sm:text-8xl md:text-[160px] tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-gray-500 uppercase leading-[0.85]">
+              <h1 className="font-sans font-black text-6xl sm:text-8xl lg:text-[160px] tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-gray-500 uppercase leading-[0.85]">
                 Bohnea
               </h1>
             </div>
@@ -97,7 +163,7 @@ export default function App() {
             </p>
 
             {/* Coffee Type Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8 md:mt-12 max-w-2xl pl-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4 mt-8 lg:mt-12 max-w-2xl pl-2">
               <CoffeeTypeCard title="Espresso" desc="Kräftig, aromatisch und voller Energie." />
               <CoffeeTypeCard title="Latte" desc="Cremig, mild und perfekt für jeden Tag." />
               <CoffeeTypeCard title="Kaffee" desc="Frisch gebrüht aus ausgewählten Bohnen." />
@@ -123,11 +189,11 @@ export default function App() {
           </div>
 
           {/* Right Column - Big Image */}
-          <div className="hidden md:flex md:w-2/5 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 items-center justify-center md:mt-0 z-0 md:h-[600px] select-none pointer-events-none">
+          <div className="hidden lg:flex lg:w-2/5 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 items-center justify-center lg:mt-0 z-0 lg:h-[600px] select-none pointer-events-none">
             <img 
               src="https://images.unsplash.com/photo-1550478144-884812ae93be?w=1000&auto=format&fit=crop&q=80" 
               alt="Dampfende Tasse Kaffee"
-              className="w-full h-full object-cover object-center opacity-90 rounded-full md:rounded-none drop-shadow-2xl mix-blend-lighten"
+              className="w-full h-full object-cover object-center opacity-90 rounded-full lg:rounded-none drop-shadow-2xl mix-blend-lighten"
               style={{
                 maskImage: 'radial-gradient(circle, black 35%, transparent 70%)',
                 WebkitMaskImage: 'radial-gradient(circle, black 35%, transparent 70%)'
@@ -190,12 +256,12 @@ export default function App() {
 // Components
 function CoffeeTypeCard({ title, desc }: { title: string, desc: string }) {
   return (
-    <div className="bg-coffee-card/80 border border-coffee-line rounded-lg p-2 md:p-4 flex flex-col items-center justify-start text-center hover:bg-coffee-card transition-colors cursor-pointer group">
+    <div className="bg-coffee-card/80 border border-coffee-line rounded-xl p-3 sm:p-4 flex flex-col items-center justify-start text-center hover:bg-coffee-card transition-colors cursor-pointer group">
       <div className="text-[#d17c46] mb-2 group-hover:scale-110 transition-transform">
         <CupSoda size={18} strokeWidth={1.5} />
       </div>
-      <h3 className="font-bold text-white/90 text-[10px] md:text-sm mb-1">{title}</h3>
-      <p className="text-white/55 text-[8px] md:text-[10px] leading-tight">{desc}</p>
+      <h3 className="font-bold text-white/90 text-xs sm:text-sm mb-1">{title}</h3>
+      <p className="text-white/55 text-[10px] sm:text-xs leading-normal">{desc}</p>
     </div>
   );
 }
